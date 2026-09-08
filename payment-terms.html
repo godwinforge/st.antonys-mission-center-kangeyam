@@ -21,8 +21,9 @@
         <a href="index.html#history">History</a>
         <a href="index.html#journey">Journey</a>
         <a href="index.html#gallery">Gallery</a>
-        <a class="nav-cta" href="payment-terms.html">Payment Terms</a>
+        <a class="payment-nav active" href="payment-terms.html"><span>Payment Terms</span><b>Important</b></a>
       </div>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     </nav>
     <div class="terms-hero-inner">
       <p class="eyebrow">Payments · Terms &amp; Conditions</p>
@@ -97,5 +98,10 @@
     <div class="footer-brand">St. Antony’s Mission Centre · Kangeyam</div>
     <div>Payment Terms &amp; Conditions</div>
   </footer>
+<script>
+const menuButton=document.querySelector('.menu-toggle');
+const navLinks=document.querySelector('.nav-links');
+if(menuButton&&navLinks){menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',open?'true':'false');});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));}
+</script>
 </body>
 </html>
